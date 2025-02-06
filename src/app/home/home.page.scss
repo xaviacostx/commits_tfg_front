@@ -1,0 +1,108 @@
+
+/* Estilos para la cabecera */
+ion-grid {
+    margin-top: 20px;
+}
+
+ion-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+ion-list {
+    // background: linear-gradient(45deg, #32a852, #a8eb12);
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+ion-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 15px;
+}
+
+ion-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+ion-badge {
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+
+  /* Estilo para los botones */
+ion-button {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 40px;
+    border-radius: 10px;
+    --background: linear-gradient(45deg, #32a852, #a8eb12);
+    --color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+    }
+}
+
+// ion-button:hover {
+//     background: #00ff0d;
+// }
+
+  /* Estilo para la disposición de los controles */
+ion-row {
+    justify-content: center;
+}
+
+ion-col {
+    text-align: center;
+    margin: 10px 0;
+}
+
+  /* Mejora de accesibilidad y visibilidad */
+@media (max-width: 768px) {
+    ion-title {
+    font-size: 1.2rem;
+    }
+    ion-label, ion-badge {
+    font-size: 0.9rem;
+    }
+}
+
+
+.color_grasas {
+    --background: linear-gradient(45deg, #FF6F00, #FF3D00); // Naranja súper intenso a rojo fuego
+    color: white;
+}
+
+.color_hidratos {
+    --background: linear-gradient(45deg, #76FF03, #32CD32); // Verde neón a un verde más brillante
+    color: white;
+}
+
+.color_proteinas {
+    --background: linear-gradient(45deg, #FF1744, #D50000); // Rojo vibrante a un rojo aún más intenso
+    color: white;
+}
+
+.color_kcal {
+    --background: linear-gradient(45deg, #D500F9, #AA00FF); // Morado eléctrico a púrpura profundo
+    color: white;
+}
+
+
+#fondo {
+    --background: url('/assets/images/background8.jpg') no-repeat center center / cover ;
+    --color: black;
+}
+    

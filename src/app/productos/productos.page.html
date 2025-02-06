@@ -1,0 +1,33 @@
+<ion-content [fullscreen]="true" id="fondo">
+
+    <div>
+    <ion-grid id="tabla">
+        <ion-row>
+            <ion-col>
+        <div id="selector">
+            <ion-select label="Selecciona los productos consumidos:" placeholder="Producto" color="success"  [(ngModel)]="productoSeleccionado">
+                <ion-select-option *ngFor="let producto of productos" [value]="producto">
+                    {{ producto.nombre }}
+                </ion-select-option>
+            </ion-select>
+            
+        </div>
+            </ion-col>
+            <ion-col>
+                <ion-input label="Selecciona la cantidad" type="number" placeholder="000" [(ngModel)]="cantidadSeleccionada"></ion-input>
+            </ion-col>
+            <ion-col>
+                <p>g</p>
+            </ion-col>
+            <ion-col>
+                <ion-button (click)="anadirProducto()" >GUARDAR</ion-button>
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+    
+    </div>
+
+    
+
+    </ion-content>

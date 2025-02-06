@@ -1,0 +1,98 @@
+
+<ion-content  [fullscreen]="true" id="fondo" >
+  
+  <div>
+    <ion-grid >
+      <ion-row>
+        <ion-col>
+        user name {{auth_user?.name}}
+
+        </ion-col>
+
+        <ion-col>
+          ALIMNENTACIÓN SALUDABLE!
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div>
+    <!-- <img src="assets/imagenes/manzana_1.webp" alt="imagenes/manzana_ofc.png"> -->
+  </div>
+  
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+    <ion-title>CONTROL DIARIO</ion-title>
+    <ion-list>
+      <ion-item>
+        <ion-label>GRASAS</ion-label>
+        <ion-badge class="color_grasas" >{{dia.grasas}}g</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>HIDRATOS DE CARBONO</ion-label>
+        <ion-badge class="color_hidratos">{{dia.hidratos}}g</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>PRROTEINA</ion-label>
+        <ion-badge class="color_proteinas">{{dia.proteinas}}g</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>CALORIAS</ion-label>
+        <ion-badge class="color_kcal">{{dia.kcal}} </ion-badge>
+      </ion-item>
+    </ion-list>
+  </ion-col>
+  
+  <ion-col>
+    <ion-title>CONTROL MENSUAL</ion-title>
+    <ion-list>
+      <ion-item>
+        <ion-label>GRASAS</ion-label>
+        <ion-badge class="color_grasas">{{mes.grasas}}g</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>HIDRATOS DE CARBONO</ion-label>
+        <ion-badge class="color_hidratos">{{mes.hidratos}}g</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>PRROTEINA</ion-label>
+        <ion-badge class="color_proteinas">{{mes.proteinas}}g</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>CALORIAS</ion-label>
+        <ion-badge class="color_kcal">{{mes.kcal}}</ion-badge>
+      </ion-item>
+    </ion-list>
+  </ion-col>
+  
+  <ion-col>
+    <ion-title>CONTROL ANUAL</ion-title>
+    <ion-list>
+      <ion-item>
+        <ion-label>GRASAS</ion-label>
+        <ion-badge class="color_grasas">{{ano.grasas}}g</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>HIDRATOS DE CARBONO</ion-label>
+        <ion-badge class="color_hidratos">{{ano.hidratos}}g</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>PRROTEINA</ion-label>
+        <ion-badge class="color_proteinas">{{ano.proteinas}}g</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>CALORIAS</ion-label>
+        <ion-badge class="color_kcal">{{ano.kcal}}</ion-badge>
+      </ion-item>
+    </ion-list>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <div>
+    <ion-button routerLink="/productos">AÑADIR PRODUCTOS</ion-button>
+  </div>
+</ion-row>
+</ion-grid>
+
+</ion-content>

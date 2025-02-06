@@ -1,0 +1,36 @@
+ion-content {
+    --background: url('/assets/images/background8.jpg') no-repeat center center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+
+    .button-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; // Espaciado entre botones
+    }
+
+    ion-button {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 15px 40px;
+        border-radius: 10px;
+        --background: linear-gradient(45deg, #32a852, #a8eb12);
+        --color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+        }
+    }
+}
