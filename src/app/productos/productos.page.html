@@ -3,29 +3,49 @@
     <div>
     <ion-grid id="tabla">
         <ion-row>
-            <ion-col>
-        <div id="selector">
-            <ion-select label="Selecciona los productos consumidos:" placeholder="Producto" color="success"  [(ngModel)]="productoSeleccionado">
+            <ion-col class="alineacion" size="6" >
+                <ion-label>Selecciona los productos consumidos:</ion-label>
+            </ion-col>
+            <ion-col size="3">
+            <ion-select placeholder="Producto" color="success"  [(ngModel)]="productoSeleccionado">
                 <ion-select-option *ngFor="let producto of productos" [value]="producto">
                     {{ producto.nombre }}
                 </ion-select-option>
             </ion-select>
-            
-        </div>
             </ion-col>
-            <ion-col>
-                <ion-input label="Selecciona la cantidad" type="number" placeholder="000" [(ngModel)]="cantidadSeleccionada"></ion-input>
+        </ion-row>
+        <ion-row>
+            <ion-col size="1">
+
             </ion-col>
-            <ion-col>
+            <ion-col class="alineacion" size="5" >
+                <ion-label>Selecciona la cantidad:</ion-label>
+            </ion-col>
+            <ion-col size="1">
+                <ion-input  type="number" placeholder="000" [(ngModel)]="cantidadSeleccionada"></ion-input>
+            </ion-col>
+            <ion-col size="3">
                 <p>g</p>
             </ion-col>
-            <ion-col>
-                <ion-button (click)="anadirProducto()" >GUARDAR</ion-button>
-            </ion-col>
-
+            
         </ion-row>
+        <ion-row>
+            <ion-col id="guardar">
+                <ion-button class="naranja" (click)="anadirProducto()" >GUARDAR</ion-button>
+            </ion-col>
+        </ion-row>
+        <div id="botts">
+        <ion-row>
+            <ion-col >
+            <ion-button class="lila" routerLink="/home">IR A PÁGINA DE INICIO</ion-button>
+            <ion-button class="amarillo" routerLink="/ranking">IR A RANKING</ion-button>
+            <ion-button class="rojo" routerLink="/log-in">LOG OUT</ion-button>
+
+        </ion-col>
+        </ion-row>
+    </div>
     </ion-grid>
-    
+
     </div>
 
     

@@ -18,10 +18,13 @@ ion-content {
         gap: 20px; // Espaciado entre botones
     }
 
-    ion-button {
+    .verde {
         font-size: 20px;
         font-weight: bold;
-        padding: 15px 40px;
+        // padding: 15px 40px;
+        margin-right: 10px;
+        margin-left: 10px;
+
         border-radius: 10px;
         --background: linear-gradient(45deg, #32a852, #a8eb12);
         --color: white;
@@ -33,4 +36,21 @@ ion-content {
             box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
         }
     }
-}
+    .rojo {
+        font-size: 20px;
+        font-weight: bold;
+        // padding: 15px 40px;
+        margin-right: 10px;
+        margin-left: 10px;
+
+        border-radius: 10px;
+        --background: linear-gradient(45deg, #880505, #ff0000);
+        --color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+    }
+    }}

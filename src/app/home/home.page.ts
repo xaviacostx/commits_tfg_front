@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-//import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
-import { IonicModule } from '@ionic/angular';
+import { IonContent, IonHeader, IonTitle, IonToolbar,
+    IonGrid, IonRow, IonCol, IonList,
+    IonItem, IonLabel, IonBadge, IonButton } from '@ionic/angular/standalone';
+
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { HttpClient } from "@angular/common/http";
 import { AuthService } from '@auth0/auth0-angular';
@@ -17,7 +19,9 @@ import { AuthService } from '@auth0/auth0-angular';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [ CommonModule, FormsModule, IonicModule, RouterLink ]
+  imports: [ CommonModule, FormsModule, RouterLink,  IonContent, IonHeader, IonTitle, IonToolbar,
+    IonContent, IonGrid, IonRow, IonCol, IonTitle, IonList,
+    IonItem, IonLabel, IonBadge, IonButton  ]
 })
 export class HomePage implements OnInit {
   // public user = {
@@ -58,6 +62,7 @@ export class HomePage implements OnInit {
     kcal: 0,
   }
 
+  public host: string = 'https://commits-tfg-back.onrender.com';
 
 
   constructor(private http: HttpClient, public auth: AuthService) { }
@@ -98,7 +103,7 @@ export class HomePage implements OnInit {
 
     console.log("🔄 Cargando usuario desde DB:", this.auth_user.email);
 
-    this.http.get(`http://localhost:3000/user/${this.auth_user.email}`).subscribe(
+    this.http.get(`https://commits-tfg-back.onrender.com/user/${this.auth_user.email}`).subscribe(
         (response: any) => {
             if (response && response !== 'User not found') {
                 console.log("✅ Usuario encontrado en la BD:", response);
@@ -131,7 +136,7 @@ createUser() {
       picture: this.auth_user.picture
   };
 
-  this.http.post('http://localhost:3000/user', user).subscribe(
+  this.http.post('https://commits-tfg-back.onrender.com/user', user).subscribe(
       (response: any) => {
           console.log("✅ Usuario creado correctamente:", response);
           this.db_user = user;
@@ -159,7 +164,7 @@ cargarDia() {
 
   let fechaActual = new Date().toISOString().split('T')[0];
 
-  this.http.get(`http://localhost:3000/total_consumido_dia/${this.auth_user.email}/${fechaActual}`)
+  this.http.get(`https://commits-tfg-back.onrender.com/total_consumido_dia/${this.auth_user.email}/${fechaActual}`)
       .subscribe((response: any) => {
           this.total_consumido_dia = response;
           console.log('📊 Datos cargados en total_consumido_dia:', response);
@@ -177,7 +182,7 @@ cargarMes() {
 
   let fechaMes = new Date().toISOString().slice(0, 7);
 
-  this.http.get(`http://localhost:3000/total_consumido_mes/${this.auth_user.email}/${fechaMes}`)
+  this.http.get(`https://commits-tfg-back.onrender.com/total_consumido_mes/${this.auth_user.email}/${fechaMes}`)
       .subscribe((response: any) => {
           this.total_consumido_mes = response;
           console.log('📊 Datos cargados en total_consumido_mes:', response);
@@ -195,7 +200,7 @@ cargarMes() {
 
     let anoActual = new Date().getFullYear();
 
-    this.http.get(`http://localhost:3000/total_consumido_ano/${this.auth_user.email}/${anoActual}`)
+    this.http.get(`https://commits-tfg-back.onrender.com/total_consumido_ano/${this.auth_user.email}/${anoActual}`)
         .subscribe((response: any) => {
             this.total_consumido_ano = response;
             console.log('📊 Datos cargados en total_consumido_ano:', response);
@@ -207,7 +212,7 @@ cargarMes() {
 
 
   anadirConsumido(){
-    this.http.get(`http://localhost:3000/prueba_total_consumido`).subscribe((response: any) => {
+    this.http.get(`https://commits-tfg-back.onrender.com/prueba_total_consumido`).subscribe((response: any) => {
       this.total_consumido = response; // Asigna los datos recibidos
       console.log('Datos cargados en total_consumido:', this.total_consumido);
   

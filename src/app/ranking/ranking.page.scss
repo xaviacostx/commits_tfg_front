@@ -1,36 +1,52 @@
 
-#fondo {
-    
-    --background: url('/assets/images/background9.jpg') no-repeat center center / cover ;
-    
-
-    --color: white;
-}
-div{
-    width: 80%; 
-    margin-left: 10%;
+/* Estilos para la cabecera */
+ion-grid {
+    margin-top: 20px;
 }
 
-// #selector{
-//     text-align: center;
-// }
-
-#tabla{
-    margin-top: 8%;
+p{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
     text-align: center;
 }
-
-#tabla_elegida{
-    text-align: center ;
+ion-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
-#guardar{
-    text-align: center ;
-    margin-top: 5%;
-
+ion-list {
+    // background: linear-gradient(45deg, #32a852, #a8eb12);
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 10px;
 }
 
-.verde {
+ion-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 15px;
+}
+
+ion-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+ion-badge {
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+
+  /* Estilo para los botones */
+ion-button {
     font-size: 20px;
     font-weight: bold;
     padding: 15px 40px;
@@ -45,6 +61,63 @@ div{
         box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
     }
 }
+
+// ion-button:hover {
+//     background: #00ff0d;
+// }
+
+  /* Estilo para la disposición de los controles */
+ion-row {
+    justify-content: center;
+}
+
+ion-col {
+    text-align: center;
+    margin: 10px 0;
+}
+
+  /* Mejora de accesibilidad y visibilidad */
+@media (max-width: 768px) {
+    ion-title {
+    font-size: 1.2rem;
+    }
+    ion-label, ion-badge {
+    font-size: 0.9rem;
+    }
+}
+
+
+
+.color_grasas {
+    --background: linear-gradient(45deg, #FF6F00, #FF3D00); // Naranja súper intenso a rojo fuego
+    color: white;
+}
+
+#badge {
+    --background: linear-gradient(45deg, #76FF03, #32CD32); // Verde neón a un verde más brillante
+    color: white;
+}
+
+.l{
+    --background: linear-gradient(45deg, #FF1744, #D50000); // Rojo vibrante a un rojo aún más intenso
+    color: white;
+}
+
+.color_kcal {
+    --background: linear-gradient(45deg, #D500F9, #AA00FF); // Morado eléctrico a púrpura profundo
+    color: white;
+}
+
+
+#fondo {
+    --background: url('/assets/images/background8.jpg') no-repeat center center / cover ;
+    --color: black;
+}
+    
+.index{
+    color: white;
+}
+
 .amarillo {
     font-size: 20px;
     font-weight: bold;
@@ -119,43 +192,8 @@ div{
         box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
 }
 }
-ion-grid {
-    margin-top: 20px;
-    text-align: center;
-}
-
-
-
-p {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #fff;
-
-}
-
-ion-select {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #fff;
-    text-transform: uppercase;
-}
-ion-input{
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #fff;
-    text-transform: uppercase;
-}
-ion-label{
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #fff;
-    text-transform: uppercase;
-    margin-top: 100%;
-}
-#botts{
-    margin-top: 20%;
-}
-.alineacion{
-        padding: 15px 15px;
-        text-align: right;
+#badge_dos{
+    --background: linear-gradient(45deg, #880505, #ff0000); // Verde neón a un verde más brillante
+    color: white;
+    
 }

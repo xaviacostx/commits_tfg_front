@@ -1,17 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
 import { HttpClient } from "@angular/common/http";
 import { AuthService } from '@auth0/auth0-angular';
+import { IonContent, IonGrid, IonRow, IonCol, IonTitle, IonList,
+    IonItem, IonLabel, IonBadge, IonButton, IonSelect,
+    IonSelectOption, IonInput } from '@ionic/angular/standalone';
+
 
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.page.html',
   styleUrls: ['./productos.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule, RouterLink]
+  imports: [CommonModule, FormsModule, RouterLink,
+    IonContent, IonGrid, IonRow, IonCol, IonTitle, IonList,
+    IonItem, IonLabel, IonBadge, IonButton, IonSelect,
+    IonSelectOption, IonInput ]
 })
 export class ProductosPage implements OnInit {
   public auth_user: any = null;
@@ -39,7 +45,7 @@ export class ProductosPage implements OnInit {
       return;
     }
 
-    this.http.get(`http://localhost:3000/productos`).subscribe(
+    this.http.get(`https://commits-tfg-back.onrender.com/productos`).subscribe(
       (response: any) => {
         this.productos = response;
         console.log("📦 Productos cargados:", response);
@@ -77,7 +83,7 @@ export class ProductosPage implements OnInit {
 
     console.log("🛒 Enviando producto a la BD:", nuevo_producto);
 
-    this.http.post('http://localhost:3000/total_consumido', nuevo_producto).subscribe(
+    this.http.post('https://commits-tfg-back.onrender.com/total_consumido', nuevo_producto).subscribe(
       (response: any) => {
         console.log("✅ Producto añadido correctamente:", response);
         this.loadProductos(); // Recargar lista de productos después de añadir uno nuevo

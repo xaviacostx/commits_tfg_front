@@ -3,22 +3,32 @@
   
   <div>
     <ion-grid >
+      
       <ion-row>
-        <ion-col>
-        user name {{auth_user?.name}}
+        <ion-col class="index">
+        Usuario: {{auth_user?.name}}
 
         </ion-col>
-
-        <ion-col>
+<ion-col>
+</ion-col>
+        <ion-col class="index">
           ALIMNENTACIÓN SALUDABLE!
         </ion-col>
       </ion-row>
     </ion-grid>
   </div>
+<div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <!-- <p>Esta página permite visualizar el seguimiento de los macronutrientes consumidos en tres niveles de detalle: 
+          diario, mensual y anual. Su objetivo es proporcionar un control preciso de la alimentación del usuario, 
+          facilitando el monitoreo de su ingesta calórica y nutricional.</p> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
 
-  <div>
-    <!-- <img src="assets/imagenes/manzana_1.webp" alt="imagenes/manzana_ofc.png"> -->
-  </div>
   
     <ion-grid>
       <ion-row>
@@ -89,8 +99,12 @@
   </ion-col>
 </ion-row>
 <ion-row>
-  <div>
-    <ion-button routerLink="/productos">AÑADIR PRODUCTOS</ion-button>
+  <div id="botones">
+    <ion-button class="verde" routerLink="/productos">AÑADIR PRODUCTOS</ion-button>
+    <ion-button class="amarillo" routerLink="/ranking">IR A RANKING</ion-button>
+    <ion-button class="rojo" routerLink="/log-in">LOG OUT</ion-button>
+
+
   </div>
 </ion-row>
 </ion-grid>
