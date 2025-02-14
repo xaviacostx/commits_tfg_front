@@ -46,21 +46,21 @@ ion-badge {
 }
 
   /* Estilo para los botones */
-ion-button {
-    font-size: 20px;
-    font-weight: bold;
-    padding: 15px 40px;
-    border-radius: 10px;
-    --background: linear-gradient(45deg, #32a852, #a8eb12);
-    --color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+// ion-button {
+//     font-size: 20px;
+//     font-weight: bold;
+//     // padding: 15px 40px;
+//     // border-radius: 10px;
+//     --background: linear-gradient(45deg, #32a852, #a8eb12);
+//     --color: white;
+//     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+//     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-    &:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
-    }
-}
+//     &:hover {
+//         transform: scale(1.1);
+//         box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+//     }
+// }
 
 // ion-button:hover {
 //     background: #00ff0d;
@@ -191,6 +191,23 @@ ion-col {
         transform: scale(1.1);
         box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
 }
+}
+.verde {
+    font-size: 20px;
+    font-weight: bold;
+    // padding: 15px 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    --background: linear-gradient(45deg, #32a852, #a8eb12);
+    --color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+    }
 }
 #badge_dos{
     --background: linear-gradient(45deg, #880505, #ff0000); // Verde neón a un verde más brillante

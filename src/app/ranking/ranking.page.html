@@ -14,7 +14,7 @@
 <ion-col size="4">
   <p>MÁS CANTIDAD CONSUMIDA</p>
   <ion-list>
-    <ion-item *ngFor="let producto of rankingProductos; let i = index">
+    <ion-item *ngFor="let producto of rankingProductosCantidad; let i = index">
       <ion-label>
         <strong>#{{ i + 1 }}</strong> - {{ producto.nombre }}
       </ion-label>
@@ -26,7 +26,7 @@
 <ion-col size="4">
   <p>MÁS VECES CONSUMIDO</p>
   <ion-list>
-    <ion-item *ngFor="let producto of rankingProductos; let i = index">
+    <ion-item *ngFor="let producto of rankingProductosVeces; let i = index">
       <ion-label>
         <strong>#{{ i + 1 }}</strong> - {{ producto.nombre }}
       </ion-label>

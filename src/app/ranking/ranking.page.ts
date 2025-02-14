@@ -22,17 +22,31 @@ export class RankingPage implements OnInit {
 
   constructor(private http: HttpClient, public auth: AuthService) {}
 
-  rankingProductos: any = [];
+  rankingProductosVeces: any = [];
+  rankingProductosCantidad: any = [];
 
   ngOnInit() {
+    this.obtenerRankingCantidad();
     this.obtenerRankingGlobal();
-
+    
   }
 
+
+  obtenerRankingCantidad() {
+    this.http.get('https://commits-tfg-back.onrender.com/ranking').subscribe(
+      (response: any) => {
+          this.rankingProductosCantidad = response;
+          console.log("🏆 Ranking de productos:", response);
+      },
+      (error) => {
+          console.error("❌ Error al cargar el ranking de productos:", error);
+      }
+  );
+  }
   obtenerRankingGlobal() {
     this.http.get('https://commits-tfg-back.onrender.com/ranking_veces').subscribe(
       (response: any) => {
-          this.rankingProductos = response;
+          this.rankingProductosVeces = response;
           console.log("🏆 Ranking de productos:", response);
       },
       (error) => {
