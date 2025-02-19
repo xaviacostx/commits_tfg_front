@@ -101,12 +101,12 @@ export class HomePage implements OnInit {
         return;
     }
 
-    console.log("🔄 Cargando usuario desde DB:", this.auth_user.email);
+    console.log(" Cargando usuario desde DB:", this.auth_user.email);
 
     this.http.get(`https://commits-tfg-back.onrender.com/user/${this.auth_user.email}`).subscribe(
         (response: any) => {
             if (response && response !== 'User not found') {
-                console.log("✅ Usuario encontrado en la BD:", response);
+                console.log(" Usuario encontrado en la BD:", response);
                 this.db_user = response;
                 this.auth_user.id = response.id;
                 this.auth_user.name = response.name;
@@ -167,7 +167,7 @@ cargarDia() {
   this.http.get(`https://commits-tfg-back.onrender.com/total_consumido_dia/${this.auth_user.email}/${fechaActual}`)
       .subscribe((response: any) => {
           this.total_consumido_dia = response;
-          console.log('📊 Datos cargados en total_consumido_dia:', response);
+          console.log(' Datos cargados en total_consumido_dia:', response);
           this.calcularDia();
       }, (error) => {
           console.error(" Error al cargar los datos diarios:", error);
