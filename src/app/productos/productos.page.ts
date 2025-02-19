@@ -30,40 +30,40 @@ export class ProductosPage implements OnInit {
   ngOnInit() {
     this.auth.user$.subscribe((data: any) => {
       if (!data) {
-        console.warn("⚠️ No hay datos de usuario aún.");
+        console.warn(" No hay datos de usuario aún.");
         return;
       }
       this.auth_user = data;
-      console.log("🔹 Usuario autenticado:", this.auth_user);
+      console.log(" Usuario autenticado:", this.auth_user);
       this.loadProductos();
     });
   }
 
   loadProductos() {
     if (!this.auth_user || !this.auth_user.email) {
-      console.error("⛔ No se puede cargar productos porque el usuario no está autenticado.");
+      console.error(" No se puede cargar productos porque el usuario no está autenticado.");
       return;
     }
 
     this.http.get(`https://commits-tfg-back.onrender.com/productos`).subscribe(
       (response: any) => {
         this.productos = response;
-        console.log("📦 Productos cargados:", response);
+        console.log(" Productos cargados:", response);
       },
       (error) => {
-        console.error("❌ Error al cargar productos:", error);
+        console.error(" Error al cargar productos:", error);
       }
     );
   }
 
   anadirProducto() {
     if (!this.auth_user || !this.auth_user.email) {
-      console.error("⛔ Error: No se puede añadir producto porque el usuario no está autenticado.");
+      console.error(" Error: No se puede añadir producto porque el usuario no está autenticado.");
       return;
     }
 
     if (!this.productoSeleccionado || !this.cantidadSeleccionada) {
-      console.error("⚠️ Debes seleccionar un producto y una cantidad.");
+      console.error(" Debes seleccionar un producto y una cantidad.");
       return;
     }
 
@@ -81,15 +81,15 @@ export class ProductosPage implements OnInit {
       fecha: fechaActual
     };
 
-    console.log("🛒 Enviando producto a la BD:", nuevo_producto);
+    console.log(" Enviando producto a la BD:", nuevo_producto);
 
     this.http.post('https://commits-tfg-back.onrender.com/total_consumido', nuevo_producto).subscribe(
       (response: any) => {
-        console.log("✅ Producto añadido correctamente:", response);
-        this.loadProductos(); // Recargar lista de productos después de añadir uno nuevo
+        console.log(" Producto añadido correctamente:", response);
+        this.loadProductos(); 
       },
       (error) => {
-        console.error("❌ Error al realizar la solicitud POST:", error);
+        console.error(" Error al realizar la solicitud POST:", error);
       }
     );
   }

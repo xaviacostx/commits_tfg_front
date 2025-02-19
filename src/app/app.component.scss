@@ -46,15 +46,15 @@ ion-menu {
     font-size: 18px;
     font-weight: 500;
     padding: 10px;
-    border-radius: 5px; // 🔽 Reducimos bordes
-    margin: 5px 0; // 🔽 Reducimos el espacio entre los elementos
+    border-radius: 5px; 
+    margin: 5px 0; 
     transition: all 0.3s ease-in-out;
 
     &:hover {
       background: rgba(255, 255, 255, 0.3) !important;
       transform: scale(1.05);
     }
-
+  
     &.selected {
       background: rgba(255, 255, 255, 0.4) !important;
       font-weight: bold;
@@ -72,3 +72,11 @@ ion-menu {
     display: block;
   }
 }
+ion-tittle {
+  --background: transparent;
+    --color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+

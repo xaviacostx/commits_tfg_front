@@ -1,12 +1,11 @@
 <ion-menu contentId="main-content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu Content</ion-title>
+      <ion-title>MENU</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <ion-list id="inbox-list">
-      <ion-list-header>Inbox</ion-list-header>
+    <ion-list  id="inbox-list">
 
       @for (p of appPages; track p; let i = $index) {
         <ion-menu-toggle auto-hide="false">
@@ -20,12 +19,11 @@
   </ion-content>
 </ion-menu>
 <div class="ion-page" id="main-content">
-  <ion-header>
-    <ion-toolbar>
+  <ion-header class="he2">
+    <ion-toolbar class="he3">
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">

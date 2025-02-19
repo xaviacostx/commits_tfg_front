@@ -36,10 +36,10 @@ export class RankingPage implements OnInit {
     this.http.get('https://commits-tfg-back.onrender.com/ranking').subscribe(
       (response: any) => {
           this.rankingProductosCantidad = response;
-          console.log("🏆 Ranking de productos:", response);
+          console.log(" Ranking de productos:", response);
       },
       (error) => {
-          console.error("❌ Error al cargar el ranking de productos:", error);
+          console.error(" Error al cargar el ranking de productos:", error);
       }
   );
   }
@@ -47,10 +47,10 @@ export class RankingPage implements OnInit {
     this.http.get('https://commits-tfg-back.onrender.com/ranking_veces').subscribe(
       (response: any) => {
           this.rankingProductosVeces = response;
-          console.log("🏆 Ranking de productos:", response);
+          console.log(" Ranking de productos:", response);
       },
       (error) => {
-          console.error("❌ Error al cargar el ranking de productos:", error);
+          console.error(" Error al cargar el ranking de productos:", error);
       }
   );
   }

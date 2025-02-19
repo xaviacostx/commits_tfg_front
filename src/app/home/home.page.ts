@@ -75,19 +75,19 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.auth.user$.subscribe((data: any) => {
       if (!data) {
-        console.warn("⚠️ No hay datos de usuario aún.");
+        console.warn(" No hay datos de usuario aún.");
         return;
       }
   
       this.auth_user = data;
-      console.log("🔹 Usuario autenticado:", this.auth_user);
+      console.log(" Usuario autenticado:", this.auth_user);
   
       // Verificamos si el email existe antes de llamar a loadUser()
       if (this.auth_user.email) {
-        console.log("✅ Email encontrado:", this.auth_user.email);
+        console.log(" Email encontrado:", this.auth_user.email);
         this.loadUser();
       } else {
-        console.error("⛔ auth_user.email sigue siendo undefined.");
+        console.error(" auth_user.email sigue siendo undefined.");
       }
     });
   }
@@ -97,7 +97,7 @@ export class HomePage implements OnInit {
 
   loadUser() {
     if (!this.auth_user || !this.auth_user.email) {
-        console.error("⛔ No se puede cargar el usuario porque auth_user.email es undefined.");
+        console.error(" No se puede cargar el usuario porque auth_user.email es undefined.");
         return;
     }
 
@@ -118,12 +118,12 @@ export class HomePage implements OnInit {
                 this.cargarMes();
                 this.cargarAno();
             } else {
-                console.warn("⚠️ Usuario no encontrado en la BD, creando usuario...");
+                console.warn(" Usuario no encontrado en la BD, creando usuario...");
                 this.createUser();
             }
         },
         (error) => {
-            console.error("❌ Error al cargar el usuario:", error);
+            console.error(" Error al cargar el usuario:", error);
         }
     );
 }
@@ -138,7 +138,7 @@ createUser() {
 
   this.http.post('https://commits-tfg-back.onrender.com/user', user).subscribe(
       (response: any) => {
-          console.log("✅ Usuario creado correctamente:", response);
+          console.log(" Usuario creado correctamente:", response);
           this.db_user = user;
           this.auth_user.id = user.id;
           this.auth_user.name = user.name;
@@ -151,14 +151,14 @@ createUser() {
           this.cargarAno();
       },
       (error) => {
-          console.error("❌ Error al crear usuario:", error);
+          console.error(" Error al crear usuario:", error);
       }
   );
 }
 
 cargarDia() {
   if (!this.auth_user || !this.auth_user.email) {
-      console.error("⛔ No se puede cargar los datos del día porque el usuario no está autenticado.");
+      console.error(" No se puede cargar los datos del día porque el usuario no está autenticado.");
       return;
   }
 
@@ -170,13 +170,13 @@ cargarDia() {
           console.log('📊 Datos cargados en total_consumido_dia:', response);
           this.calcularDia();
       }, (error) => {
-          console.error("❌ Error al cargar los datos diarios:", error);
+          console.error(" Error al cargar los datos diarios:", error);
       });
 }
 
 cargarMes() {
   if (!this.auth_user || !this.auth_user.email) {
-      console.error("⛔ No se puede cargar los datos del mes porque el usuario no está autenticado.");
+      console.error(" No se puede cargar los datos del mes porque el usuario no está autenticado.");
       return;
   }
 
@@ -185,16 +185,16 @@ cargarMes() {
   this.http.get(`https://commits-tfg-back.onrender.com/total_consumido_mes/${this.auth_user.email}/${fechaMes}`)
       .subscribe((response: any) => {
           this.total_consumido_mes = response;
-          console.log('📊 Datos cargados en total_consumido_mes:', response);
+          console.log(' Datos cargados en total_consumido_mes:', response);
           this.calcularMes();
       }, (error) => {
-          console.error("❌ Error al cargar los datos mensuales:", error);
+          console.error(" Error al cargar los datos mensuales:", error);
       });
 }
 
   cargarAno() {
     if (!this.auth_user || !this.auth_user.email) {
-        console.error("⛔ No se puede cargar los datos del año porque el usuario no está autenticado.");
+        console.error(" No se puede cargar los datos del año porque el usuario no está autenticado.");
         return;
     }
 
@@ -203,10 +203,10 @@ cargarMes() {
     this.http.get(`https://commits-tfg-back.onrender.com/total_consumido_ano/${this.auth_user.email}/${anoActual}`)
         .subscribe((response: any) => {
             this.total_consumido_ano = response;
-            console.log('📊 Datos cargados en total_consumido_ano:', response);
+            console.log(' Datos cargados en total_consumido_ano:', response);
             this.calcularAno();
         }, (error) => {
-            console.error("❌ Error al cargar los datos anuales:", error);
+            console.error(" Error al cargar los datos anuales:", error);
         });
 }
 
